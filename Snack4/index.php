@@ -9,7 +9,7 @@
     <body>
         <?php
             $numArray = [];
-            for($x = 0; $x <= 15; $x++) {
+            while(count($numArray) < 15) {
                 $num = rand(1, 100);
                 if(!in_array($num, $numArray)) {
                     $numArray[] = $num;
