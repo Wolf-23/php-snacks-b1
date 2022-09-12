@@ -13,11 +13,14 @@
             $age = $_GET['age'];
             $avviso = '';
 
-            
-            if(strlen($name) > 3 && strlen($mail) >= 5 && strpos($mail, '@') !== false && strpos($mail, '.') !== false && is_numeric($age) == true) {
-                $avviso = 'Accesso riuscito!';
+            if($name != '' && $mail != '' && $age != '') {
+                if(strlen(trim($name)) > 3 && strlen(trim($mail)) >= 5 && strpos($mail, '@') !== false && strpos($mail, '.') !== false && is_numeric($age) == true) {
+                    $avviso = 'Accesso riuscito!';
+                } else {
+                    $avviso = 'Accesso negato!';
+                }
             } else {
-                $avviso = 'Accesso negato!';
+                $avviso = 'Dati non inserito correttamente!';
             }
         ?>
 
